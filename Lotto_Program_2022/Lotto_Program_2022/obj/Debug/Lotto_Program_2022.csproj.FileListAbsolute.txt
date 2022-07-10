@@ -1,9 +1,9 @@
 C:\Users\82102\Desktop\새 폴더 (5)\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\bin\Debug\Lotto_Program_2022.exe.config
 C:\Users\82102\Desktop\새 폴더 (5)\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\bin\Debug\Lotto_Program_2022.exe
 C:\Users\82102\Desktop\새 폴더 (5)\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\bin\Debug\Lotto_Program_2022.pdb
-C:\Users\82102\Desktop\새 폴더 (5)\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\obj\Debug\Lotto_Program_2022.csproj.AssemblyReference.cache
 C:\Users\82102\Desktop\새 폴더 (5)\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\obj\Debug\MainWindow.g.cs
 C:\Users\82102\Desktop\새 폴더 (5)\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\obj\Debug\App.g.cs
+C:\Users\82102\Desktop\새 폴더 (5)\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\82102\Desktop\새 폴더 (5)\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\obj\Debug\Lotto_Program_2022_MarkupCompile.cache
 C:\Users\82102\Desktop\새 폴더 (5)\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\obj\Debug\Lotto_Program_2022_MarkupCompile.lref
 C:\Users\82102\Desktop\새 폴더 (5)\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\obj\Debug\MainWindow.baml
@@ -13,3 +13,4 @@ C:\Users\82102\Desktop\새 폴더 (5)\Lotto_Program_2022\Lotto_Program_2022\Lott
 C:\Users\82102\Desktop\새 폴더 (5)\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\obj\Debug\Lotto_Program_2022.csproj.CoreCompileInputs.cache
 C:\Users\82102\Desktop\새 폴더 (5)\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\obj\Debug\Lotto_Program_2022.exe
 C:\Users\82102\Desktop\새 폴더 (5)\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\obj\Debug\Lotto_Program_2022.pdb
+C:\Users\82102\Desktop\새 폴더 (5)\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\Lotto_Program_2022\obj\Debug\Lotto_Program_2022.csproj.AssemblyReference.cache

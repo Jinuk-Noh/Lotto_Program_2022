@@ -10,8 +10,8 @@ namespace Lotto_Program_2022.Model
 {
     public class LotNumber: Notifier
     {
-        private int _Number;
-        public int Number 
+        private int? _Number;
+        public int? Number 
         {   get { return _Number; }
             set {_Number = value; OnPropertyChanged("Number"); } 
         }
@@ -27,6 +27,18 @@ namespace Lotto_Program_2022.Model
         {
             this.Number = lotNumber;
             this.RightStatus = NumberStatus.Nothing;
+
+            LotNumbers.SetNumber(this);
+        }
+
+        public LotNumber()
+        {
+            LotNumbers.SetNumber(this);
+        }
+
+        public override string ToString()
+        {
+            return Number.ToString();
         }
     }
     
@@ -39,12 +51,22 @@ namespace Lotto_Program_2022.Model
 
     public class LotNumbers
     {
-        ObservableCollection<LotNumber> numbers = new ObservableCollection<LotNumber>();
-        public ObservableCollection<LotNumber> GetAllNumbers()
+        static ObservableCollection<LotNumber> numbers = new ObservableCollection<LotNumber>();
+        public static ObservableCollection<LotNumber> GetAllNumbers()
         {
-            for (int i = 1; i < 46; i++)
+            return numbers;
+        }
+
+        public static ObservableCollection<LotNumber> SetNumber(LotNumber lot)
+        {
+            if(lot.Number == null || lot.Number > 45)
             {
-                numbers.Add(new LotNumber(i));
+                lot.Number = 0;
+            }
+
+            if (!numbers.Contains(lot))
+            {
+                numbers.Add(lot);
             }
 
             return numbers;

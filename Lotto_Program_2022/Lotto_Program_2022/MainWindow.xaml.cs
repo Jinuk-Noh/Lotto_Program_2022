@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Lotto_Program_2022.ViewModel;
 
 namespace Lotto_Program_2022
 {
@@ -23,6 +24,8 @@ namespace Lotto_Program_2022
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new LotNumberViewModel();
+            
         }
     }
 }
