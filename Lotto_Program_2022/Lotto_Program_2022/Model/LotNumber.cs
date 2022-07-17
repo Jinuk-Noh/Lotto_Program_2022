@@ -5,15 +5,17 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace Lotto_Program_2022.Model
 {
-    public class LotNumber: Notifier
+    public class LotNumber : Notifier
     {
         private int? _Number;
-        public int? Number 
-        {   get { return _Number; }
-            set {_Number = value; OnPropertyChanged("Number"); } 
+        public int? Number
+        { 
+            get { return _Number; }
+            set { _Number = value; OnPropertyChanged("Number"); }
         }
 
         private NumberStatus _RightStatus;
@@ -59,9 +61,9 @@ namespace Lotto_Program_2022.Model
 
         public static ObservableCollection<LotNumber> SetNumber(LotNumber lot)
         {
-            if(lot.Number == null || lot.Number > 45)
+            if (lot.Number == null || lot.Number > 45)
             {
-                lot.Number = 0;
+                lot.Number = null;
             }
 
             if (!numbers.Contains(lot))

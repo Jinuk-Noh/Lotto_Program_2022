@@ -3,10 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Lotto_Program_2022"
         xmlns:viewModel ="clr-namespace:Lotto_Program_2022.ViewModel"
+        xmlns:convert="clr-namespace:Lotto_Program_2022.ViewModel.Command"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" MinWidth="800">
+    <Window.Resources>
+        <convert:ButtonColorConverter x:Key="ButtonColorConverter"/>
+    </Window.Resources>
+    <Window.DataContext>
+        <viewModel:LotNumberViewModel/>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5"/>
@@ -21,54 +27,54 @@
         <StackPanel Grid.Row="0" Grid.Column="1">
             <Label Content="로또 당첨 번호" HorizontalAlignment="Left"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Content="{Binding Source={x:Reference tBx1}, Path=Text}" Width="50" Height="50" Margin="30">
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Ellipse Fill="Gray"></Ellipse>
-                        </ControlTemplate>
-                    </Button.Template>
+                <Button Content="{Binding Path=RightNumber1.Number}" Width="50" Height="50" Margin="30">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="50"/>
+                        </Style>
+                    </Button.Resources>
                 </Button>
-                <Button Content="{Binding Source={x:Reference tBx2}, Path=Text}" Width="50" Height="50" Margin="30">
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Ellipse Fill="Gray"></Ellipse>
-                        </ControlTemplate>
-                    </Button.Template>
+                <Button Content="{Binding Path=RightNumber2.Number}" Width="50" Height="50" Margin="30">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="50"/>
+                        </Style>
+                    </Button.Resources>
                 </Button>
-                <Button Content="{Binding Source={x:Reference tBx3}, Path=Text}" Width="50" Height="50" Margin="30">
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Ellipse Fill="Gray"></Ellipse>
-                        </ControlTemplate>
-                    </Button.Template>
+                <Button Content="{Binding Path=RightNumber3.Number}" Width="50" Height="50" Margin="30">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="50"/>
+                        </Style>
+                    </Button.Resources>
                 </Button>
-                <Button Content="{Binding Source={x:Reference tBx4}, Path=Text}" Width="50" Height="50" Margin="30">
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Ellipse Fill="Gray"></Ellipse>
-                        </ControlTemplate>
-                    </Button.Template>
+                <Button Content="{Binding Path=RightNumber4.Number}" Width="50" Height="50" Margin="30">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="50"/>
+                        </Style>
+                    </Button.Resources>
                 </Button>
-                <Button Content="{Binding Source={x:Reference tBx5}, Path=Text}" Width="50" Height="50" Margin="30">
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Ellipse Fill="Gray"></Ellipse>
-                        </ControlTemplate>
-                    </Button.Template>
+                <Button Content="{Binding Path=RightNumber5.Number}" Width="50" Height="50" Margin="30">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="50"/>
+                        </Style>
+                    </Button.Resources>
                 </Button>
-                <Button Content="{Binding Source={x:Reference tBx6}, Path=Text}" Width="50" Height="50" Margin="30">
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Ellipse Fill="Gray"></Ellipse>
-                        </ControlTemplate>
-                    </Button.Template>
+                <Button Content="{Binding Path=RightNumber6.Number}" Width="50" Height="50" Margin="30">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="50"/>
+                        </Style>
+                    </Button.Resources>
                 </Button>
-                <Button Content="{Binding Source={x:Reference tBx7}, Path=Text}" Width="50" Height="50" Margin="30">
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Ellipse Fill="Gray"></Ellipse>
-                        </ControlTemplate>
-                    </Button.Template>
+                <Button Content="{Binding Path=RightNumber7.Number}" Width="50" Height="50" Margin="30">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="50"/>
+                        </Style>
+                    </Button.Resources>
                 </Button>
             </StackPanel>
         </StackPanel>
@@ -76,49 +82,49 @@
         <StackPanel Grid.Row="1" Grid.Column="1">
             <Label Content="로또 입력 번호" HorizontalAlignment="Left" />
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Content="{Binding Source={x:Reference tBx1}, Path=Text}" Width="50" Height="50" Margin="30">
+                <Button Content="{Binding Source={x:Reference tBx1}, Path=Text}" Width="50" Height="50" Margin="30" Background="{Binding Model1.RightStatus, Converter={StaticResource ButtonColorConverter}, UpdateSourceTrigger=PropertyChanged}">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="50"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button Content="{Binding Source={x:Reference tBx2}, Path=Text}" Width="50" Height="50" Margin="30">
+                <Button Content="{Binding Source={x:Reference tBx2}, Path=Text}" Width="50" Height="50" Margin="30" Background="{Binding Model2.RightStatus, Converter={StaticResource ButtonColorConverter}, UpdateSourceTrigger=PropertyChanged}">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="50"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button Content="{Binding Source={x:Reference tBx3}, Path=Text}" Width="50" Height="50" Margin="30">
+                <Button Content="{Binding Source={x:Reference tBx3}, Path=Text}" Width="50" Height="50" Margin="30" Background="{Binding Model3.RightStatus, Converter={StaticResource ButtonColorConverter}, UpdateSourceTrigger=PropertyChanged}">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="50"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button Content="{Binding Source={x:Reference tBx4}, Path=Text}" Width="50" Height="50" Margin="30">
+                <Button Content="{Binding Source={x:Reference tBx4}, Path=Text}" Width="50" Height="50" Margin="30" Background="{Binding Model4.RightStatus, Converter={StaticResource ButtonColorConverter}, UpdateSourceTrigger=PropertyChanged}">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="50"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button Content="{Binding Source={x:Reference tBx5}, Path=Text}" Width="50" Height="50" Margin="30">
+                <Button Content="{Binding Source={x:Reference tBx5}, Path=Text}" Width="50" Height="50" Margin="30" Background="{Binding Model5.RightStatus, Converter={StaticResource ButtonColorConverter}, UpdateSourceTrigger=PropertyChanged}">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="50"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button Content="{Binding Source={x:Reference tBx6}, Path=Text}" Width="50" Height="50" Margin="30">
+                <Button Content="{Binding Source={x:Reference tBx6}, Path=Text}" Width="50" Height="50" Margin="30" Background="{Binding Model6.RightStatus, Converter={StaticResource ButtonColorConverter}, UpdateSourceTrigger=PropertyChanged}">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="50"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button Content="{Binding Source={x:Reference tBx7}, Path=Text}" Width="50" Height="50" Margin="30">
+                <Button Content="{Binding Source={x:Reference tBx7}, Path=Text}" Width="50" Height="50" Margin="30" Background="{Binding Model7.RightStatus, Converter={StaticResource ButtonColorConverter}, UpdateSourceTrigger=PropertyChanged}">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="50"/>
@@ -134,48 +140,24 @@
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Orientation="Horizontal">
                 <TextBlock Text="회차 :" Height="20" Width="50" Margin="20,5,0,0" HorizontalAlignment="Left" Grid.Row="0"/>
-                <TextBox Height="20" Width="200" Text="회차를 입력해주세요." HorizontalAlignment="Left" Margin="0,5,0,0"/>
+                <TextBox x:Name="txtDrwNo" Height="20" Width="200" Text="회차를 입력해주세요." HorizontalAlignment="Left" Margin="0,5,0,0"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Row="1">
-                <TextBox x:Name="tBx1" Text="{Binding Model.Number}" Height="50" Margin="20,10,0,0" Grid.Row="2" Width="50" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15">
-                    <TextBox.DataContext>
-                        <viewModel:LotNumberViewModel/>
-                    </TextBox.DataContext>
+                <TextBox x:Name="tBx1" Text="{Binding Path=Model1.Number}" Height="50" Margin="20,10,0,0" Grid.Row="2" Width="50" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15">
                 </TextBox>
-                <TextBox x:Name="tBx2" Text="{Binding Model.Number}" Height="50" Margin="20,10,0,0" Grid.Row="2" Width="50" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15">
-                    <TextBox.DataContext>
-                        <viewModel:LotNumberViewModel/>
-                    </TextBox.DataContext>
+                <TextBox x:Name="tBx2" Text="{Binding Path=Model2.Number}" Height="50" Margin="20,10,0,0" Grid.Row="2" Width="50" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15">
                 </TextBox>
-                <TextBox x:Name="tBx3" Text="{Binding Model.Number}" Height="50" Margin="20,10,0,0" Grid.Row="2" Width="50" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15">
-                    <TextBox.DataContext>
-                        <viewModel:LotNumberViewModel/>
-                    </TextBox.DataContext>
+                <TextBox x:Name="tBx3" Text="{Binding Path=Model3.Number}" Height="50" Margin="20,10,0,0" Grid.Row="2" Width="50" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15">
                 </TextBox>
-                <TextBox x:Name="tBx4" Text="{Binding Model.Number}" Height="50" Margin="20,10,0,0" Grid.Row="2" Width="50" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15">
-                    <TextBox.DataContext>
-                        <viewModel:LotNumberViewModel/>
-                    </TextBox.DataContext>
+                <TextBox x:Name="tBx4" Text="{Binding Path=Model4.Number}" Height="50" Margin="20,10,0,0" Grid.Row="2" Width="50" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15">
                 </TextBox>
-                <TextBox x:Name="tBx5" Text="{Binding Model.Number}" Height="50" Margin="20,10,0,0" Grid.Row="2" Width="50" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15">
-                    <TextBox.DataContext>
-                        <viewModel:LotNumberViewModel/>
-                    </TextBox.DataContext>
+                <TextBox x:Name="tBx5" Text="{Binding Path=Model5.Number}" Height="50" Margin="20,10,0,0" Grid.Row="2" Width="50" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15">
                 </TextBox>
-                <TextBox x:Name="tBx6" Text="{Binding Model.Number}" Height="50" Margin="20,10,0,0" Grid.Row="2" Width="50" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15">
-                    <TextBox.DataContext>
-                        <viewModel:LotNumberViewModel/>
-                    </TextBox.DataContext>
+                <TextBox x:Name="tBx6" Text="{Binding Path=Model6.Number}" Height="50" Margin="20,10,0,0" Grid.Row="2" Width="50" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15">
                 </TextBox>
-                <TextBox x:Name="tBx7" Text="{Binding Model.Number}" Height="50" Margin="20,10,0,0" Grid.Row="2" Width="50" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15">
-                    <TextBox.DataContext>
-                        <viewModel:LotNumberViewModel/>
-                    </TextBox.DataContext>
+                <TextBox x:Name="tBx7" Text="{Binding Path=Model7.Number}" Height="50" Margin="20,10,0,0" Grid.Row="2" Width="50" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="15">
                 </TextBox>
-                <Button Name="btnRetrieve" Content="조회" Width="50" Height="50" Margin="20,10,0,0" HorizontalAlignment="Right" Command="{Binding DataRetrieveCommand}">
-                    <Button.DataContext>
-                        <viewModel:LotNumberViewModel/>
-                    </Button.DataContext>
+                <Button Name="btnRetrieve" Content="조회" Width="50" Height="50" Margin="20,10,0,0" HorizontalAlignment="Right" Command="{Binding Path=DataRetrieveCommand}" CommandParameter="{Binding Source={x:Reference Name=txtDrwNo}, Path=Text}">
                 </Button>
             </StackPanel>
         </Grid>

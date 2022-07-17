@@ -11,7 +11,7 @@ namespace Lotto_Program_2022.ViewModel.Command
     {
         public event EventHandler CanExecuteChanged;
 
-        private Action _execute;
+        private Action<string> _execute;
 
         public bool CanExecute(object parameter)
         {
@@ -20,10 +20,10 @@ namespace Lotto_Program_2022.ViewModel.Command
 
         public void Execute(object parameter)
         {
-            _execute.Invoke();
+            _execute.Invoke(parameter.ToString());
         }
 
-        public DataRetrieveCommand(Action execute)
+        public DataRetrieveCommand(Action<string> execute)
         {
             _execute = execute;
         }

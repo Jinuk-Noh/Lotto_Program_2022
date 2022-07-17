@@ -27,5 +27,13 @@ namespace Lotto_Program_2022
             this.DataContext = new LotNumberViewModel();
             
         }
+
+        private void OnValue_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if ((e.Text) == null || !(e.Text).All(char.IsDigit))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
